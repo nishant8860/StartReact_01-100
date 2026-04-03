@@ -1,0 +1,32 @@
+{
+  "name": "startreact",
+  "version": "1.0.0",
+  "description": "This Is for the React Projects",
+  "keywords": [],
+  "homepage": "https://github.com/nishant8860/StartReact_01-100#readme",
+  "bugs": {
+    "url": "https://github.com/nishant8860/StartReact_01-100/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishant8860/StartReact_01-100.git"
+  },
+  "license": "ISC",
+  "author": "Nishant Sharma",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browsersList":[
+    "last 2 versions"
+  ]
+}
