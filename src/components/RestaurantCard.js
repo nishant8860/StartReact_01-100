@@ -1,20 +1,34 @@
-import {CDN_URL} from "../utlis/constants"
+import { CDN_URL } from "../utlis/constants";
+
 const RestaurantCard = (props) => {
   const { resData } = props;
 
-  const { name, cuisines, rating, deliveryTime } = resData;
+  console.log(resData?.info?.cloudinaryImageId, "nishan");
+
+  const {
+    name,
+    cuisines,
+    avgRating,
+    sla,
+    cloudinaryImageId,
+  } = resData?.info || {};
 
   return (
     <div className="res-card" style={{ background: "#D3D3D3" }}>
       <img
         className="res-logo"
-        alt="my-images"
-       src={CDN_URL}
+        alt="restaurant"
+        src={
+    resData?.info?.cloudinaryImageId
+      ? `https://media-assets.swiggy.com/swiggy/image/upload/${resData.info.cloudinaryImageId}`
+      : "https://source.unsplash.com/400x300/?food"
+  }
       />
+
       <h3>{name}</h3>
-      <h4>{cuisines}</h4>
-      <h4>{deliveryTime} mins</h4>
-      <h4>⭐{rating}</h4>
+      <h4>{cuisines?.join(", ")}</h4>
+      <h4>{sla?.deliveryTime} mins</h4>
+      <h4>⭐ {avgRating}</h4>
     </div>
   );
 };
